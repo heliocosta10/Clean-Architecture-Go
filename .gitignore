@@ -1,0 +1,17 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Go build artifacts
+/bin/
+/build/
+*.exe
+*.test
+*.out
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,29 @@
+### Criar uma Order
+POST http://localhost:8080/order
+Content-Type: application/json
+
+{
+  "customer": "Cliente de teste",
+  "description": "Pedido criado pelo arquivo api.http",
+  "amount": 149.90
+}
+
+### Listar Orders via REST
+GET http://localhost:8080/order
+Accept: application/json
+
+### Listar Orders via GraphQL
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ ListOrders { id customer description amount created_at } }"
+}
+
+### Criar Order via GraphQL
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { CreateOrder(customer: \"Cliente GraphQL\", description: \"Pedido de teste\", amount: 99.9) { id customer description amount created_at } }"
+}

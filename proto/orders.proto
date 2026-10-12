@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package orders;
+option go_package = "orders-clean-architecture/internal/adapter/rpc/pb";
+
+service OrdersService {
+  rpc ListOrders (ListOrdersRequest) returns (ListOrdersResponse);
+}
+
+message ListOrdersRequest {}
+
+message Order {
+  int64 id = 1;
+  string customer = 2;
+  string description = 3;
+  double amount = 4;
+  string created_at = 5;
+}
+
+message ListOrdersResponse {
+  repeated Order orders = 1;
+}
